@@ -1,0 +1,394 @@
+digraph ID3_tree_visualization {
+	node [shape=circle]
+	"N0=5"
+	"N1=3"
+	"N0=5" -> "N1=3" [label=3]
+	"N2=unacc"
+	"N1=3" -> "N2=unacc" [label=2]
+	"N4=0"
+	"N1=3" -> "N4=0" [label=6]
+	"N5=1"
+	"N4=0" -> "N5=1" [label=4]
+	"N6=unacc"
+	"N5=1" -> "N6=unacc" [label=3]
+	"N8=unacc"
+	"N5=1" -> "N8=unacc" [label=4]
+	"N10=2"
+	"N5=1" -> "N10=2" [label=2]
+	"N11=acc"
+	"N10=2" -> "N11=acc" [label=3]
+	"N13=acc"
+	"N10=2" -> "N13=acc" [label=2]
+	"N15=acc"
+	"N10=2" -> "N15=acc" [label=4]
+	"N17=acc"
+	"N10=2" -> "N17=acc" [label=5]
+	"N20=2"
+	"N5=1" -> "N20=2" [label=1]
+	"N21=acc"
+	"N20=2" -> "N21=acc" [label=5]
+	"N23=unacc"
+	"N20=2" -> "N23=unacc" [label=2]
+	"N25=acc"
+	"N20=2" -> "N25=acc" [label=3]
+	"N27=acc"
+	"N20=2" -> "N27=acc" [label=4]
+	"N31=1"
+	"N4=0" -> "N31=1" [label=3]
+	"N32=unacc"
+	"N31=1" -> "N32=unacc" [label=4]
+	"N34=acc"
+	"N31=1" -> "N34=acc" [label=2]
+	"N36=acc"
+	"N31=1" -> "N36=acc" [label=3]
+	"N38=acc"
+	"N31=1" -> "N38=acc" [label=1]
+	"N41=1"
+	"N4=0" -> "N41=1" [label=1]
+	"N42=acc"
+	"N41=1" -> "N42=acc" [label=4]
+	"N44=4"
+	"N41=1" -> "N44=4" [label=3]
+	"N45=vgood"
+	"N44=4" -> "N45=vgood" [label=2]
+	"N47=acc"
+	"N44=4" -> "N47=acc" [label=1]
+	"N49=vgood"
+	"N44=4" -> "N49=vgood" [label=3]
+	"N52=4"
+	"N41=1" -> "N52=4" [label=1]
+	"N53=vgood"
+	"N52=4" -> "N53=vgood" [label=3]
+	"N55=good"
+	"N52=4" -> "N55=good" [label=1]
+	"N57=vgood"
+	"N52=4" -> "N57=vgood" [label=2]
+	"N60=4"
+	"N41=1" -> "N60=4" [label=2]
+	"N61=vgood"
+	"N60=4" -> "N61=vgood" [label=2]
+	"N63=vgood"
+	"N60=4" -> "N63=vgood" [label=3]
+	"N65=good"
+	"N60=4" -> "N65=good" [label=1]
+	"N69=1"
+	"N4=0" -> "N69=1" [label=2]
+	"N70=4"
+	"N69=1" -> "N70=4" [label=2]
+	"N71=acc"
+	"N70=4" -> "N71=acc" [label=1]
+	"N73=vgood"
+	"N70=4" -> "N73=vgood" [label=2]
+	"N75=vgood"
+	"N70=4" -> "N75=vgood" [label=3]
+	"N78=acc"
+	"N69=1" -> "N78=acc" [label=3]
+	"N80=4"
+	"N69=1" -> "N80=4" [label=1]
+	"N81=vgood"
+	"N80=4" -> "N81=vgood" [label=3]
+	"N83=good"
+	"N80=4" -> "N83=good" [label=1]
+	"N85=vgood"
+	"N80=4" -> "N85=vgood" [label=2]
+	"N88=acc"
+	"N69=1" -> "N88=acc" [label=4]
+	"N92=0"
+	"N1=3" -> "N92=0" [label=4]
+	"N93=1"
+	"N92=0" -> "N93=1" [label=4]
+	"N94=unacc"
+	"N93=1" -> "N94=unacc" [label=4]
+	"N96=acc"
+	"N93=1" -> "N96=acc" [label=2]
+	"N98=acc"
+	"N93=1" -> "N98=acc" [label=1]
+	"N100=unacc"
+	"N93=1" -> "N100=unacc" [label=3]
+	"N103=1"
+	"N92=0" -> "N103=1" [label=3]
+	"N104=acc"
+	"N103=1" -> "N104=acc" [label=2]
+	"N106=unacc"
+	"N103=1" -> "N106=unacc" [label=4]
+	"N108=acc"
+	"N103=1" -> "N108=acc" [label=3]
+	"N110=acc"
+	"N103=1" -> "N110=acc" [label=1]
+	"N113=1"
+	"N92=0" -> "N113=1" [label=1]
+	"N114=4"
+	"N113=1" -> "N114=4" [label=2]
+	"N115=vgood"
+	"N114=4" -> "N115=vgood" [label=3]
+	"N117=good"
+	"N114=4" -> "N117=good" [label=1]
+	"N119=vgood"
+	"N114=4" -> "N119=vgood" [label=2]
+	"N122=4"
+	"N113=1" -> "N122=4" [label=1]
+	"N123=vgood"
+	"N122=4" -> "N123=vgood" [label=3]
+	"N125=good"
+	"N122=4" -> "N125=good" [label=1]
+	"N127=vgood"
+	"N122=4" -> "N127=vgood" [label=2]
+	"N130=acc"
+	"N113=1" -> "N130=acc" [label=4]
+	"N132=4"
+	"N113=1" -> "N132=4" [label=3]
+	"N133=acc"
+	"N132=4" -> "N133=acc" [label=1]
+	"N135=vgood"
+	"N132=4" -> "N135=vgood" [label=2]
+	"N137=vgood"
+	"N132=4" -> "N137=vgood" [label=3]
+	"N141=1"
+	"N92=0" -> "N141=1" [label=2]
+	"N142=acc"
+	"N141=1" -> "N142=acc" [label=3]
+	"N144=4"
+	"N141=1" -> "N144=4" [label=2]
+	"N145=vgood"
+	"N144=4" -> "N145=vgood" [label=3]
+	"N147=acc"
+	"N144=4" -> "N147=acc" [label=1]
+	"N149=acc"
+	"N144=4" -> "N149=acc" [label=2]
+	"N152=4"
+	"N141=1" -> "N152=4" [label=1]
+	"N153=good"
+	"N152=4" -> "N153=good" [label=1]
+	"N155=good"
+	"N152=4" -> "N155=good" [label=2]
+	"N157=vgood"
+	"N152=4" -> "N157=vgood" [label=3]
+	"N160=acc"
+	"N141=1" -> "N160=acc" [label=4]
+	"N165=3"
+	"N0=5" -> "N165=3" [label=2]
+	"N166=0"
+	"N165=3" -> "N166=0" [label=4]
+	"N167=1"
+	"N166=0" -> "N167=1" [label=1]
+	"N168=4"
+	"N167=1" -> "N168=4" [label=4]
+	"N169=acc"
+	"N168=4" -> "N169=acc" [label=3]
+	"N171=acc"
+	"N168=4" -> "N171=acc" [label=2]
+	"N173=unacc"
+	"N168=4" -> "N173=unacc" [label=1]
+	"N176=4"
+	"N167=1" -> "N176=4" [label=2]
+	"N177=acc"
+	"N176=4" -> "N177=acc" [label=1]
+	"N179=acc"
+	"N176=4" -> "N179=acc" [label=2]
+	"N181=good"
+	"N176=4" -> "N181=good" [label=3]
+	"N184=acc"
+	"N167=1" -> "N184=acc" [label=3]
+	"N186=4"
+	"N167=1" -> "N186=4" [label=1]
+	"N187=good"
+	"N186=4" -> "N187=good" [label=2]
+	"N189=acc"
+	"N186=4" -> "N189=acc" [label=1]
+	"N191=good"
+	"N186=4" -> "N191=good" [label=3]
+	"N195=4"
+	"N166=0" -> "N195=4" [label=3]
+	"N196=1"
+	"N195=4" -> "N196=1" [label=3]
+	"N197=acc"
+	"N196=1" -> "N197=acc" [label=1]
+	"N199=acc"
+	"N196=1" -> "N199=acc" [label=3]
+	"N201=unacc"
+	"N196=1" -> "N201=unacc" [label=4]
+	"N203=acc"
+	"N196=1" -> "N203=acc" [label=2]
+	"N206=unacc"
+	"N195=4" -> "N206=unacc" [label=1]
+	"N208=2"
+	"N195=4" -> "N208=2" [label=2]
+	"N209=acc"
+	"N208=2" -> "N209=acc" [label=5]
+	"N211=unacc"
+	"N208=2" -> "N211=unacc" [label=2]
+	"N213=unacc"
+	"N208=2" -> "N213=unacc" [label=3]
+	"N215=acc"
+	"N208=2" -> "N215=acc" [label=4]
+	"N219=1"
+	"N166=0" -> "N219=1" [label=4]
+	"N220=unacc"
+	"N219=1" -> "N220=unacc" [label=4]
+	"N222=unacc"
+	"N219=1" -> "N222=unacc" [label=3]
+	"N224=4"
+	"N219=1" -> "N224=4" [label=1]
+	"N225=acc"
+	"N224=4" -> "N225=acc" [label=3]
+	"N227=acc"
+	"N224=4" -> "N227=acc" [label=2]
+	"N229=unacc"
+	"N224=4" -> "N229=unacc" [label=1]
+	"N232=2"
+	"N219=1" -> "N232=2" [label=2]
+	"N233=acc"
+	"N232=2" -> "N233=acc" [label=4]
+	"N235=unacc"
+	"N232=2" -> "N235=unacc" [label=2]
+	"N237=unacc"
+	"N232=2" -> "N237=unacc" [label=5]
+	"N239=unacc"
+	"N232=2" -> "N239=unacc" [label=3]
+	"N243=1"
+	"N166=0" -> "N243=1" [label=2]
+	"N244=4"
+	"N243=1" -> "N244=4" [label=1]
+	"N245=good"
+	"N244=4" -> "N245=good" [label=3]
+	"N247=good"
+	"N244=4" -> "N247=good" [label=2]
+	"N249=acc"
+	"N244=4" -> "N249=acc" [label=1]
+	"N252=4"
+	"N243=1" -> "N252=4" [label=4]
+	"N253=acc"
+	"N252=4" -> "N253=acc" [label=3]
+	"N255=acc"
+	"N252=4" -> "N255=acc" [label=2]
+	"N257=unacc"
+	"N252=4" -> "N257=unacc" [label=1]
+	"N260=acc"
+	"N243=1" -> "N260=acc" [label=2]
+	"N262=4"
+	"N243=1" -> "N262=4" [label=3]
+	"N263=acc"
+	"N262=4" -> "N263=acc" [label=3]
+	"N265=acc"
+	"N262=4" -> "N265=acc" [label=2]
+	"N267=unacc"
+	"N262=4" -> "N267=unacc" [label=1]
+	"N272=unacc"
+	"N165=3" -> "N272=unacc" [label=2]
+	"N274=0"
+	"N165=3" -> "N274=0" [label=6]
+	"N275=1"
+	"N274=0" -> "N275=1" [label=1]
+	"N276=4"
+	"N275=1" -> "N276=4" [label=1]
+	"N277=good"
+	"N276=4" -> "N277=good" [label=2]
+	"N279=good"
+	"N276=4" -> "N279=good" [label=3]
+	"N281=unacc"
+	"N276=4" -> "N281=unacc" [label=1]
+	"N284=4"
+	"N275=1" -> "N284=4" [label=3]
+	"N285=acc"
+	"N284=4" -> "N285=acc" [label=2]
+	"N287=acc"
+	"N284=4" -> "N287=acc" [label=3]
+	"N289=unacc"
+	"N284=4" -> "N289=unacc" [label=1]
+	"N292=4"
+	"N275=1" -> "N292=4" [label=2]
+	"N293=good"
+	"N292=4" -> "N293=good" [label=2]
+	"N295=good"
+	"N292=4" -> "N295=good" [label=3]
+	"N297=acc"
+	"N292=4" -> "N297=acc" [label=1]
+	"N300=4"
+	"N275=1" -> "N300=4" [label=4]
+	"N301=acc"
+	"N300=4" -> "N301=acc" [label=3]
+	"N303=acc"
+	"N300=4" -> "N303=acc" [label=2]
+	"N305=unacc"
+	"N300=4" -> "N305=unacc" [label=1]
+	"N309=4"
+	"N274=0" -> "N309=4" [label=3]
+	"N310=unacc"
+	"N309=4" -> "N310=unacc" [label=1]
+	"N312=1"
+	"N309=4" -> "N312=1" [label=2]
+	"N313=acc"
+	"N312=1" -> "N313=acc" [label=1]
+	"N315=acc"
+	"N312=1" -> "N315=acc" [label=3]
+	"N317=unacc"
+	"N312=1" -> "N317=unacc" [label=4]
+	"N319=acc"
+	"N312=1" -> "N319=acc" [label=2]
+	"N322=1"
+	"N309=4" -> "N322=1" [label=3]
+	"N323=acc"
+	"N322=1" -> "N323=acc" [label=1]
+	"N325=acc"
+	"N322=1" -> "N325=acc" [label=3]
+	"N327=unacc"
+	"N322=1" -> "N327=unacc" [label=4]
+	"N329=acc"
+	"N322=1" -> "N329=acc" [label=2]
+	"N333=1"
+	"N274=0" -> "N333=1" [label=4]
+	"N334=unacc"
+	"N333=1" -> "N334=unacc" [label=4]
+	"N336=unacc"
+	"N333=1" -> "N336=unacc" [label=3]
+	"N338=4"
+	"N333=1" -> "N338=4" [label=2]
+	"N339=unacc"
+	"N338=4" -> "N339=unacc" [label=1]
+	"N341=acc"
+	"N338=4" -> "N341=acc" [label=2]
+	"N343=acc"
+	"N338=4" -> "N343=acc" [label=3]
+	"N346=2"
+	"N333=1" -> "N346=2" [label=1]
+	"N347=unacc"
+	"N346=2" -> "N347=unacc" [label=3]
+	"N349=unacc"
+	"N346=2" -> "N349=unacc" [label=2]
+	"N351=acc"
+	"N346=2" -> "N351=acc" [label=5]
+	"N353=acc"
+	"N346=2" -> "N353=acc" [label=4]
+	"N357=1"
+	"N274=0" -> "N357=1" [label=2]
+	"N358=2"
+	"N357=1" -> "N358=2" [label=3]
+	"N359=unacc"
+	"N358=2" -> "N359=unacc" [label=4]
+	"N361=acc"
+	"N358=2" -> "N361=acc" [label=5]
+	"N363=acc"
+	"N358=2" -> "N363=acc" [label=3]
+	"N365=unacc"
+	"N358=2" -> "N365=unacc" [label=2]
+	"N368=4"
+	"N357=1" -> "N368=4" [label=1]
+	"N369=good"
+	"N368=4" -> "N369=good" [label=2]
+	"N371=good"
+	"N368=4" -> "N371=good" [label=3]
+	"N373=acc"
+	"N368=4" -> "N373=acc" [label=1]
+	"N376=acc"
+	"N357=1" -> "N376=acc" [label=2]
+	"N378=4"
+	"N357=1" -> "N378=4" [label=4]
+	"N379=acc"
+	"N378=4" -> "N379=acc" [label=2]
+	"N381=acc"
+	"N378=4" -> "N381=acc" [label=3]
+	"N383=unacc"
+	"N378=4" -> "N383=unacc" [label=1]
+	"N389=unacc"
+	"N0=5" -> "N389=unacc" [label=1]
+}
