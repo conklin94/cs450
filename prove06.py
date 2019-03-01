@@ -7,10 +7,12 @@ Created on Thu Feb 14 20:47:10 2019
 """
 
 from sklearn.model_selection import train_test_split
+from sklearn import datasets
 from math import exp
 import pandas as pd
 import numpy as np
 import random
+import matplotlib.pyplot as plt
 
 class Node:
     def __init__(self, value=0, weights=[], error=0):
@@ -27,6 +29,8 @@ class NeuralNetClassifier:
         self.targets = None
         self.hidden_numbers = hidden_numbers
         self.learning_rate = learning_rate
+        self.accuracies = []
+        self.time = []
         
     def create_nodes(self, input_number, output_number):
         previous_nodes = input_number + 1
@@ -51,9 +55,13 @@ class NeuralNetClassifier:
         input_number = len(data[0])
         self.create_nodes(input_number, output_number)
         for x in range(iterations):
+            correct = 0
             for row, target in zip(data, targets):
-                self.update_weights(row, target)
-        
+                if (self.update_weights(row, target)):
+                    correct += 1
+            accuracy = correct / len(targets) * 100
+            self.accuracies.append(accuracy)
+            self.time.append(x)
         
     def activation_function(self, x):
         return 1 / (1 + exp(-x))
@@ -86,6 +94,8 @@ class NeuralNetClassifier:
             self.activation_function(outputs[idx])
             values.append(self.output_nodes[idx].value)
         
+        biggest = values.index(max(values))
+        correct = (biggest == self.targets.index(target))
         expected = np.zeros(len(self.targets))
         expected[self.targets.index(target)] = 1
         
@@ -98,7 +108,7 @@ class NeuralNetClassifier:
             #print("Error: ", self.output_nodes[idx].error)
             weights.append(self.output_nodes[idx].weights)
             errors.append(self.output_nodes[idx].error)
-        
+            
         error_sums = np.dot(errors, weights)
         #print (error_sums)
         
@@ -138,7 +148,14 @@ class NeuralNetClassifier:
                 self.output_nodes[node_idx].weights[idx] - \
                 self.learning_rate * (self.output_nodes[node_idx].error \
                                       * values[idx])
+        return correct
                 
+    def plot_errors(self):
+        
+        plt.plot(self.time, self.accuracies)
+        plt.ylabel('Accuracy')
+        plt.xlabel('Time')
+        plt.show()
         
     
     def calculate_row(self, row):
@@ -203,15 +220,19 @@ def getCarEvaluationData():
 
     return data, target;
 
-
-
-# Get the data and targets
+# Get the car data and targets
 car_data, car_target = getCarEvaluationData()
+
+iris = datasets.load_iris()
 
 
 # Divide up the training data and the testing data
 train_data, test_data, train_target, test_target = train_test_split\
 (car_data, car_target, test_size=0.3)
+
+train_data2, test_data2, train_target2, test_target2 = train_test_split\
+(iris.data, iris.target, test_size=0.3)
+
 
 # These are some of the common best values from the code below
 best_hidden_columns = 2
@@ -225,6 +246,8 @@ best_iterations = 38
 '''
 best_accuracy = 0
 number_of_nodes = 0
+best_accuracy2 = 0
+number_of_nodes2 = 0
 
 print ("Changing the number of nodes in hidden columns")
 for x in range(1,5):
@@ -242,13 +265,16 @@ for x in range(1,5):
 
     percent_correct = correct / total * 100
 
-    print ("Accuracy ", x, ": ", percent_correct, " %")
+    print ("Car Accuracy ", x, ": ", percent_correct, " %")
     if (percent_correct > best_accuracy):
         best_accuracy = percent_correct
         number_of_nodes = x
 
 best_accuracy = 0
 best_iterations = 0
+best_accuracy2 = 0
+best_iterations2 = 0
+
 print ("Changing the number of iterations")
 for x in range(1,20,2):
     classifier = NeuralNetClassifier(hidden_numbers = [number_of_nodes, \
@@ -267,13 +293,18 @@ for x in range(1,20,2):
 
     percent_correct = correct / total * 100
 
-    print ("Accuracy ", 2 * x, ": ", percent_correct, " %")
+    print ("Car Accuracy ", 2 * x, ": ", percent_correct, " %")
     if (percent_correct > best_accuracy):
         best_accuracy = percent_correct
         best_iterations = 2 * x
+        
+    
 
 best_accuracy = 0
 best_learning_rate = 0
+best_accuracy2 = 0
+best_learning_rate2 = 0
+
 print ("Changing the learning rate")
 for x in range(1,5):
     classifier = NeuralNetClassifier(hidden_numbers = [number_of_nodes, \
@@ -292,13 +323,16 @@ for x in range(1,5):
 
     percent_correct = correct / total * 100
 
-    print ("Accuracy ", .1 * x, ": ", percent_correct, " %")
+    print ("Car Accuracy ", .1 * x, ": ", percent_correct, " %")
     if (percent_correct > best_accuracy):
         best_accuracy = percent_correct
         best_learning_rate = .1 * x
 
 best_accuracy = 0
-best_hidden_columns = []
+best_hidden_columns = 0
+best_accuracy2 = 0
+best_hidden_columns2 = 0
+
 print ("Changing the number of hidden columns")
 for x in range(1,5):
     hidden_numbers = np.full(x,number_of_nodes)
@@ -316,7 +350,7 @@ for x in range(1,5):
 
     percent_correct = correct / total * 100
 
-    print ("Accuracy ", x, ": ", percent_correct, " %")
+    print ("Car Accuracy ", x, ": ", percent_correct, " %")
     if (percent_correct > best_accuracy):
         best_accuracy = percent_correct
         best_hidden_columns = x
@@ -324,6 +358,7 @@ for x in range(1,5):
 hidden_numbers = np.full(best_hidden_columns,number_of_nodes)
 classifier = NeuralNetClassifier(hidden_numbers, learning_rate=best_learning_rate)
 classifier.fit(train_data,train_target, iterations=best_iterations)
+classifier.plot_errors()
 targets_predicted = classifier.predict(test_data)
 
 total = len(test_data)
@@ -336,6 +371,23 @@ for value1, value2 in zip(targets_predicted,test_target):
 
 percent_correct = correct / total * 100
 
-print ("Accuracy: ", percent_correct, " %")
+print ("Car Accuracy: ", percent_correct, " %")
+
+classifier2 = NeuralNetClassifier(hidden_numbers, learning_rate=best_learning_rate)
+classifier2.fit(train_data2,train_target2, iterations=best_iterations)
+classifier2.plot_errors()
+targets_predicted2 = classifier2.predict(test_data2)
+
+total2 = len(test_data2)
+
+correct2 = 0
+
+for value1, value2 in zip(targets_predicted2,test_target2):
+    if value1 == value2:
+        correct2 += 1
+
+percent_correct2 = correct2 / total2 * 100
+
+print ("Plant Accuracy: ", percent_correct2, " %")
 
         
